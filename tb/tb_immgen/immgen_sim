@@ -1,0 +1,220 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_0000026a44940760 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0000026a449408f0 .scope package, "alupkg" "alupkg" 3 1;
+ .timescale 0 0;
+enum0000026a4493d410 .enum4 (5)
+   "ADD" 5'b00000,
+   "SUB" 5'b00001,
+   "AND" 5'b00010,
+   "OR" 5'b00011,
+   "XOR" 5'b00100,
+   "SLL" 5'b00101,
+   "SRL" 5'b00110,
+   "SRA" 5'b00111,
+   "SLT" 5'b01000,
+   "SLTU" 5'b01001,
+   "MUL" 5'b01010,
+   "MULH" 5'b01011,
+   "MULHSU" 5'b01100,
+   "MULHU" 5'b01101,
+   "DIV" 5'b01110,
+   "DIVU" 5'b01111,
+   "REM" 5'b10000,
+   "REMU" 5'b10001,
+   "NONE" 5'b10010
+ ;
+S_0000026a449385a0 .scope module, "immgen_tb" "immgen_tb" 4 3;
+ .timescale -9 -12;
+v0000026a44a2bb40_0 .net "immext", 31 0, v0000026a44940a80_0;  1 drivers
+v0000026a449388c0_0 .var "inst", 31 0;
+S_0000026a44938730 .scope module, "dut" "immgen" 4 8, 5 1 0, S_0000026a449385a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "inst";
+    .port_info 1 /OUTPUT 32 "immext";
+v0000026a44940a80_0 .var "immext", 31 0;
+v0000026a44943300_0 .net "inst", 31 0, v0000026a449388c0_0;  1 drivers
+v0000026a44a2baa0_0 .net "opcode", 6 0, L_0000026a44938960;  1 drivers
+E_0000026a44a29fc0/0 .event anyedge, v0000026a44a2baa0_0, v0000026a44943300_0, v0000026a44943300_0, v0000026a44943300_0;
+E_0000026a44a29fc0/1 .event anyedge, v0000026a44943300_0, v0000026a44943300_0, v0000026a44943300_0, v0000026a44943300_0;
+E_0000026a44a29fc0/2 .event anyedge, v0000026a44943300_0, v0000026a44943300_0, v0000026a44943300_0, v0000026a44943300_0;
+E_0000026a44a29fc0 .event/or E_0000026a44a29fc0/0, E_0000026a44a29fc0/1, E_0000026a44a29fc0/2;
+L_0000026a44938960 .part v0000026a449388c0_0, 0, 7;
+    .scope S_0000026a44938730;
+T_0 ;
+Ewait_0 .event/or E_0000026a44a29fc0, E_0x0;
+    %wait Ewait_0;
+    %load/vec4 v0000026a44a2baa0_0;
+    %dup/vec4;
+    %pushi/vec4 19, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %dup/vec4;
+    %pushi/vec4 103, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.2, 6;
+    %dup/vec4;
+    %pushi/vec4 35, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.3, 6;
+    %dup/vec4;
+    %pushi/vec4 99, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.4, 6;
+    %dup/vec4;
+    %pushi/vec4 55, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.5, 6;
+    %dup/vec4;
+    %pushi/vec4 23, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.6, 6;
+    %dup/vec4;
+    %pushi/vec4 111, 0, 7;
+    %cmp/u;
+    %jmp/1 T_0.7, 6;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.0 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %replicate 20;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 12, 20, 6;
+    %concat/vec4; draw_concat_vec4
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.1 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %replicate 20;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 12, 20, 6;
+    %concat/vec4; draw_concat_vec4
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.2 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %replicate 20;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 12, 20, 6;
+    %concat/vec4; draw_concat_vec4
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.3 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %replicate 20;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 7, 25, 6;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 5, 7, 4;
+    %concat/vec4; draw_concat_vec4
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.4 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %replicate 19;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 7, 4;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 6, 25, 6;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 4, 8, 5;
+    %concat/vec4; draw_concat_vec4
+    %concati/vec4 0, 0, 1;
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.5 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 20, 12, 5;
+    %concati/vec4 0, 0, 12;
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.6 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 20, 12, 5;
+    %concati/vec4 0, 0, 12;
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.7 ;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %replicate 11;
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 31, 6;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 8, 12, 5;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 1, 20, 6;
+    %concat/vec4; draw_concat_vec4
+    %load/vec4 v0000026a44943300_0;
+    %parti/s 10, 21, 6;
+    %concat/vec4; draw_concat_vec4
+    %concati/vec4 0, 0, 1;
+    %store/vec4 v0000026a44940a80_0, 0, 32;
+    %jmp T_0.9;
+T_0.9 ;
+    %pop/vec4 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0000026a449385a0;
+T_1 ;
+    %vpi_call/w 4 14 "$dumpfile", "immgen.vcd" {0 0 0};
+    %vpi_call/w 4 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000026a449385a0 {0 0 0};
+    %vpi_call/w 4 17 "$display", "Starting ImmGen Verification..." {0 0 0};
+    %pushi/vec4 1048723, 0, 32;
+    %store/vec4 v0000026a449388c0_0, 0, 32;
+    %delay 10000, 0;
+    %load/vec4 v0000026a44a2bb40_0;
+    %vpi_call/w 4 22 "$display", "I-Type: inst=%h, imm=%d (expected 1)", v0000026a449388c0_0, S<0,vec4,s32> {1 0 0};
+    %pushi/vec4 2138659, 0, 32;
+    %store/vec4 v0000026a449388c0_0, 0, 32;
+    %delay 10000, 0;
+    %load/vec4 v0000026a44a2bb40_0;
+    %vpi_call/w 4 27 "$display", "S-Type: inst=%h, imm=%d (expected 4)", v0000026a449388c0_0, S<0,vec4,s32> {1 0 0};
+    %pushi/vec4 305418423, 0, 32;
+    %store/vec4 v0000026a449388c0_0, 0, 32;
+    %delay 10000, 0;
+    %vpi_call/w 4 31 "$display", "U-Type: inst=%h, imm=%h (expected 12345000)", v0000026a449388c0_0, v0000026a44a2bb40_0 {0 0 0};
+    %pushi/vec4 4293918867, 0, 32;
+    %store/vec4 v0000026a449388c0_0, 0, 32;
+    %delay 10000, 0;
+    %load/vec4 v0000026a44a2bb40_0;
+    %vpi_call/w 4 35 "$display", "Neg I-Type: inst=%h, imm=%d (expected -1)", v0000026a449388c0_0, S<0,vec4,s32> {1 0 0};
+    %vpi_call/w 4 37 "$display", "ImmGen Verification Complete." {0 0 0};
+    %vpi_call/w 4 38 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "-";
+    "pkg/alupkg.sv";
+    "tb/tb_immgen.sv";
+    "rtl/Immgen.sv";
